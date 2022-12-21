@@ -73,7 +73,7 @@ router.put('/', withAuth, async (req, res) => {
     try {
         const workoutData = await Workout.update(req.body, {
             where: {
-                id: req.body.group_id,
+                id: req.body.workout_id,
                 workout_name: req.body.workout_name,
                 workout_timer: req.body.workout_timer,
                 rest_timer: req.body.rest_timer,
@@ -94,6 +94,24 @@ router.put('/', withAuth, async (req, res) => {
 });
 
 // DELETE WORKOUT
+router.delete('/', withAuth, async (req, res) => {
+    try {
+        const workoutData = await Workout.destroy({
+            where: {
+                id: req.body.workout_id,
+            },
+        });
 
+        if (!workoutData) {
+            res.status(404).json({ message: "No workout found with that id" });
+            return;
+        }
+
+        res.status(200).json(workoutData);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
+});
 
 module.exports = router; 
