@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
-// GET ALL USERS
+// GET ALL USERS (can use this if we want to establish a social media aspect at some point - maybe display posts of user shared workout content)
 router.get('/', async (req, res) => {
     try {
         const allUserData = await User.findAll ({
@@ -75,4 +75,26 @@ router.post("/login", async (req, res) => {
         console.log(err);
         res.status(500).json(err);
     }
+});
+
+// LOGOUT USER
+router.post("/logout", (req, res) => {
+    if (req.session.logged_in) {
+        req.session.destroy(() => {
+            res.status(204).end();
+        });
+    } else {
+        res.status(404).end();
+    }
+});
+
+// DELETE USER
+router.delete("/", async (req, res) => {
+    try {
+        const userData = await User.destroy({
+            where: {
+                id: req.body.id,
+            },
+        });
+    } catch (err) {}
 });
