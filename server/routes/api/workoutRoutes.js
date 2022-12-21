@@ -48,7 +48,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // CREATE A WORKOUT
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
     try {
         const workoutData = await Workout.create({
             user_id: req.session.user_id,
@@ -57,7 +57,6 @@ router.post('/', async (req, res) => {
             rest_timer: req.body.rest_timer,
             repeat_interval: req.body.repeat_interval,
             default_workout: req.body.default_workout
-
         });
         req.session.save(() => {
             req.session.logged_in = true;
@@ -67,4 +66,34 @@ router.post('/', async (req, res) => {
         console.error(err);
         res.status(400).json(err);
     }
-})
+});
+
+// UPDATE WORKOUT
+router.put('/', withAuth, async (req, res) => {
+    try {
+        const workoutData = await Workout.update(req.body, {
+            where: {
+                id: req.body.group_id,
+                workout_name: req.body.workout_name,
+                workout_timer: req.body.workout_timer,
+                rest_timer: req.body.rest_timer,
+                repeat_interval: req.body.repeat_interval,
+                default_workout: req.body.default_workout
+            },
+        });
+
+        if (!workoutData) {
+            res.status(400).json({
+                message: "Workout does not exist. Please create it first.",
+            });
+        }
+    } catch (err) {
+        console.error(err);
+        res.status(500).json(err);
+    }
+});
+
+// DELETE WORKOUT
+
+
+module.exports = router; 
