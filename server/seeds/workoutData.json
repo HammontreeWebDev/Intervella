@@ -1,0 +1,42 @@
+[
+    {
+        "user_id": 1,
+        "workout_name": "Standard Weights",
+        "workout_timer": 30,
+        "rest_timer": 15,
+        "repeat_interval": 5,
+        "default_workout": false
+    },
+    {
+        "user_id": 2,
+        "workout_name": "Get Swole Biceps",
+        "workout_timer": 90,
+        "rest_timer": 5,
+        "repeat_interval": 3,
+        "default_workout": false
+    },
+    {
+        "user_id": 3,
+        "workout_name": "Cardio - 500m sprint",
+        "workout_timer": 80,
+        "rest_timer": 25,
+        "repeat_interval": 7,
+        "default_workout": true
+    },
+    {
+        "user_id": 4,
+        "workout_name": "Cardio- The Beast",
+        "workout_timer": 120,
+        "rest_timer": 120,
+        "repeat_interval": 3,
+        "default_workout": false
+    },
+    {
+        "user_id": 5,
+        "workout_name": "Cardio - 5K breakdown",
+        "workout_timer": 300,
+        "rest_timer": 90,
+        "repeat_interval": 3,
+        "default_workout": false
+    }
+]
