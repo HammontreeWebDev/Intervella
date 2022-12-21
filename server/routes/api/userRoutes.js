@@ -35,4 +35,44 @@ router.post('/', async (req, res) => {
         console.log(err);
         res.status(500).json(err);
     }
-})
+});
+
+// LOGIN USER
+router.post("/login", async (req, res) => {
+    try {
+        const loginUser = await User.findOne({
+            where: {
+                email: req.body.email,
+            },
+        });
+
+        if (!loginUser) {
+            res.status(400).json({
+                message: "Incorrect email or password. Please try again!",
+            });
+            return;
+        }
+
+        const validPswd = loginUser.checkPassword(req.body.password);
+
+        if (!validPswd) {
+            res.status(400).json({
+                message: "Incorrect email or password. Please try again!",
+            });
+            return;
+        }
+
+        req.session.save(() => {
+            req.session.user_id = loginUser.id;
+            req.session.logged_in = true;
+
+            res.status(200).json({
+                user: loginUser,
+                message: "You are now logged in!",
+            });
+        });
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+});
