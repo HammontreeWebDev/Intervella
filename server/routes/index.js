@@ -1,11 +1,9 @@
 const router = require('express').Router();
 
 const api = require('./api');
-router.use('/api', api);
+const home = require('./home');
 
-// serve up react front-end in production
-router.use((req, res) => {
-    res.sendFile(path.join(__dirname, '../../client/build/index.html'));
-  });
+router.use('/', home);
+router.use('/api', api);
 
 module.exports = router;
