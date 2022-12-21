@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
-// GET ALL USERS (can use this if we want to establish a social media aspect at some point - maybe display posts of user shared workout content)
+// GET ALL USERS (can use this if we want to establish a social media aspect at some point - maybe display posts of user shared workout content) 
 router.get('/', async (req, res) => {
     try {
         const allUserData = await User.findAll ({
