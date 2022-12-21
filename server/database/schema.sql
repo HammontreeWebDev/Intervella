@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS intervella;
+CREATE DATABASE intervella;
