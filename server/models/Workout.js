@@ -34,5 +34,11 @@ Workout.init(
             type: DataTypes.BOOLEAN,
             defaultValue: false,
         }
+    },
+    {
+        sequelize,
+        modelName: "workout",
     }
 )
+
+module.exports = Workout;
