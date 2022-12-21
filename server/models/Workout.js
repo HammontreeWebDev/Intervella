@@ -16,7 +16,7 @@ Workout.init(
         },
         workout_name: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
         },
         workout_timer: {
             type: DataTypes.INTEGER,
