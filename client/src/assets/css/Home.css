@@ -1,0 +1,10 @@
+.video-container {
+width: 100vw;
+height: 100vh;
+}
+
+video {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+}

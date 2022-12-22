@@ -1,0 +1,37 @@
+/* Photos in video:
+
+Man: Photo by Cesar Galeão: https://www.pexels.com/photo/man-holding-dumbbell-3289711/
+
+Woman: Photo by Pixabay: https://www.pexels.com/photo/woman-holding-exercise-equipment-416809/
+
+*/
+
+:root{
+
+  /* Logo Fonts:
+  Robinson Corroded
+  Aged Machine
+  Archivo Black
+  */
+
+  /* Logo Colors */
+
+  --purple: #440E51;
+  --pink: #FC1681;
+  --yellow: #FFE578;
+
+  /* Shades */
+
+  /* purple */
+
+  /* pink */
+
+  /* yellow */
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
