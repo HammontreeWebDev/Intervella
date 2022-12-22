@@ -6,7 +6,7 @@ const Navbar = () => {
     return(
         <header className="custom-header">
         <nav className="custom-nav">
-            Hello This is the Home page
+            <p> Hello This is a Navbar </p>
         </nav>
         </header>
     )

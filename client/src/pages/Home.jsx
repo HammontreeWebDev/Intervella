@@ -8,7 +8,7 @@ const Home = () => {
 
     return(
         <>
-        {/* <Navbar /> */}
+        <Navbar />
         <main className="video-container">
         <video src={promo} autoPlay loop muted/>
         </main>
