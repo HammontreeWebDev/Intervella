@@ -1,9 +1,9 @@
 .custom-nav {
-    position: absolute;
-    width: 100%;
+    /* width: 100%; */
     display: flex;
     flex-direction: row;
     padding: 2%;
-    top: 0;
-    background-color: rgba(255, 255, 255, .7);
+    background-color: rgba(0, 0, 0, 1);
+    color: white;
+    margin: 0;
 }

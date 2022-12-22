@@ -13,3 +13,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// TODO: margin error? can scroll right and there is white space
