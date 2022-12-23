@@ -3,8 +3,9 @@ footer {
     padding: 4%;
     background-color: black;
     color: var(--yellow);
-    height: 8.5vh;
+    height: 9vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }

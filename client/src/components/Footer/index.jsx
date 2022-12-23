@@ -5,7 +5,9 @@ const Footer = () => {
 
     return(
         <footer>
-            <p>copyright Kaileb Hammontree</p>
+            <p className="copyright">©2022 Kaileb Hammontree. All rights reserved.</p>
+            <p>Photo Credits</p>
+            
         </footer>
     )
 }
