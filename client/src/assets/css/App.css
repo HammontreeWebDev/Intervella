@@ -34,10 +34,14 @@ Woman: Photo by Pixabay: https://www.pexels.com/photo/woman-holding-exercise-equ
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   margin: 0;
   padding: 0;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
+  background-color: black;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */

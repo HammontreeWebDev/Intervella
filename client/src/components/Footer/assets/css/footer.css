@@ -1,13 +1,14 @@
 footer {
     margin: 0;
-    padding: 4%;
+    padding: 5%;
     background-color: black;
     color: var(--yellow);
-    height: 9vh;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    flex-shrink: 0;
+    
 }
 
 .copyright {
