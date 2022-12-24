@@ -11,7 +11,13 @@ const Login = () => {
         <>
         <Navbar />
         <main className="login-main">
-
+            <section className="login-card">
+                <form action="">
+                    <input type="email" name="email" placeholder="email"/>
+                    <input type="password" name="password" placeholder="password"/>
+                    <button type="submit">Log in</button>
+                </form>
+            </section>
         </main>
         <Footer />
         </>
