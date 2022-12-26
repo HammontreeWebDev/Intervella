@@ -12,7 +12,7 @@ const Login = () => {
         <Navbar />
         <main className="login-main">
             <section className="login-card">
-                <form action="">
+                <form className="login-form" action="">
                     <input type="email" name="email" placeholder="email"/>
                     <input type="password" name="password" placeholder="password"/>
                     <button type="submit">Log in</button>

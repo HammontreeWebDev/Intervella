@@ -36,12 +36,19 @@ Woman: Photo by Pixabay: https://www.pexels.com/photo/woman-holding-exercise-equ
 body {
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
   background-color: black;
+}
+/* ! Everything in this react app is hooked to root, so setting flex to just body won't do anything... */
+#root {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
