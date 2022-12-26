@@ -10,7 +10,6 @@ const Login = () => {
     // use state to track login form's updated value
     const [loginForm, setLoginForm] = useState({ email: '', password: '' });
 
-    /// HANDLE CHANGE ///
     const handleChange = (e) => {
         const { name, value } = e.target;
 
