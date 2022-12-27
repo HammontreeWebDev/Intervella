@@ -1,15 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom"
 import './assets/css/navbar.css';
 
-const Navbar = () => {
+const Navbar = (props) => {
 
     return(
         <header className="custom-header">
         <nav className="custom-nav">
-            <Link className='nav-link' to={'/'}>Home</Link>
-            <Link className='nav-link' to={'/login'}>Login</Link>
-            <Link className='nav-link' to={'/signup'}>Sign Up</Link>
+            {props.home}
+            {props.login}
+            {props.signup}
+            {props.logout}
         </nav>
         </header>
     )

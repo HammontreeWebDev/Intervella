@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { signupUser } from "../utils/API";
 import Auth from "../utils/auth";
+import { Link } from "react-router-dom";
 
 import '../assets/css/Signup.css';
 
@@ -45,7 +46,12 @@ const Signup = () => {
 
     return (
         <>
-            <Navbar />
+            <Navbar 
+            home={<Link className='nav-link' to={'/'}>Home</Link>} 
+            login={<Link className='nav-link' to={'/login'}>Login</Link>} 
+            signup={<Link className='nav-link' to={'/signup'}>Sign Up</Link>}
+            />
+            
             {/* TODO: May want to consider changing class names just to avoid confusion - maybe make them more general or add same styling to signup.css for separation */}
             <main className="login-main">
                 <section className="login-card">

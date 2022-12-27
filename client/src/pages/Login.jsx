@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
@@ -45,7 +46,11 @@ const Login = () => {
 
   return (
     <>
-      <Navbar />
+      <Navbar
+        home={<Link className='nav-link' to={'/'}>Home</Link>}
+        login={<Link className='nav-link' to={'/login'}>Login</Link>}
+        signup={<Link className='nav-link' to={'/signup'}>Sign Up</Link>}
+      />
       <main className="login-main">
         <section className="login-card">
           <form className="login-form" onSubmit={handleFormSubmit}>
