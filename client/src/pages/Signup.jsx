@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { signupUser } from "../utils/API";
+import Auth from "../utils/auth";
 
 import '../assets/css/Signup.css';
 
@@ -22,15 +24,7 @@ const Signup = () => {
     const handleFormSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await fetch('/api/user/signup', {
-            method: 'POST',
-            body: JSON.stringify({
-                username: signupForm.username,
-                email: signupForm.email,
-                password: signupForm.password
-            }),
-            headers: { 'Content-Type': 'application/json' },
-        });
+        const response = await signupUser(signupForm.username, signupForm.email, signupForm.password);
 
         if (response.ok) {
             alert('You signed up for a new account!')
@@ -38,6 +32,9 @@ const Signup = () => {
             // TODO: find a way to personalize error msg based on error (i.e. invalid email, password, etc...)
             alert('Something went wrong, please try again.')
         }
+
+        const { token } = await response.json();
+        Auth.login(token);
 
         setSignupForm({
             username: '',
