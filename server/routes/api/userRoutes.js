@@ -1,11 +1,13 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
+const { signToken } = require('../../utils/auth');
+
 // GET ALL USERS (can use this if we want to establish a social media aspect at some point - maybe display posts of user shared workout content) 
 router.get('/', async (req, res) => {
     try {
-        const allUserData = await User.findAll ({
-            
+        const allUserData = await User.findAll({
+
         });
 
         res.status(200).json(allUserData);
@@ -25,12 +27,12 @@ router.post('/signup', async (req, res) => {
             password: req.body.password,
         });
 
-        req.session.save(() => {
-            req.session.user_id = newUserData.id;
-            req.session.logged_in = true;
+        if (!newUserData) {
+            return res.status(400).json({ message: 'Something is wrong!' });
+        }
+        const token = signToken(newUserData);
+        res.json({ token, newUserData });
 
-            res.status(200).json(newUserData);
-        });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
@@ -62,29 +64,12 @@ router.post("/login", async (req, res) => {
             return;
         }
 
-        req.session.save(() => {
-            req.session.user_id = loginUser.id;
-            req.session.logged_in = true;
+        const token = signToken(loginUser);
+        res.json({ token, loginUser });
 
-            res.status(200).json({
-                user: loginUser,
-                message: "You are now logged in!",
-            });
-        });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
-    }
-});
-
-// LOGOUT USER
-router.post("/logout", (req, res) => {
-    if (req.session.logged_in) {
-        req.session.destroy(() => {
-            res.status(204).end();
-        });
-    } else {
-        res.status(404).end();
     }
 });
 
@@ -96,7 +81,7 @@ router.delete("/", async (req, res) => {
                 id: req.body.id,
             },
         });
-    } catch (err) {}
+    } catch (err) { }
 });
 
 module.exports = router;
