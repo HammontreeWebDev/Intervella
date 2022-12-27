@@ -1,9 +1,8 @@
 const router = require("express").Router();
 const { User, Workout } = require("../../models");
-const withAuth = require("../../utils/auth");
 
 // Get All Workouts belonging to a user:
-router.get('/user/:id', async (req, res) => {
+router.get('/all/:id', async (req, res) => {
     try {
         const userData = await Workout.findAll({
             where: {
@@ -25,7 +24,7 @@ router.get('/user/:id', async (req, res) => {
 });
 
 // GET a single workout
-router.get('/:id', async (req, res) => {
+router.get('/one/:id', async (req, res) => {
     try {
         const workoutData = await Workout.findOne({
             where: {
@@ -48,7 +47,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // CREATE A WORKOUT
-router.post('/', withAuth, async (req, res) => {
+router.post('/create', async (req, res) => {
     try {
         const workoutData = await Workout.create({
             user_id: req.session.user_id,
@@ -69,7 +68,7 @@ router.post('/', withAuth, async (req, res) => {
 });
 
 // UPDATE WORKOUT
-router.put('/', withAuth, async (req, res) => {
+router.put('/update', async (req, res) => {
     try {
         const workoutData = await Workout.update(req.body, {
             where: {
@@ -94,7 +93,7 @@ router.put('/', withAuth, async (req, res) => {
 });
 
 // DELETE WORKOUT
-router.delete('/', withAuth, async (req, res) => {
+router.delete('/delete', async (req, res) => {
     try {
         const workoutData = await Workout.destroy({
             where: {
