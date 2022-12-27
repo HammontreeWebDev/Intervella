@@ -1,8 +1,10 @@
 const router = require("express").Router();
 const { User, Workout } = require("../../models");
 
+const { authMiddleware } = require('../../utils/auth');
+
 // Get All Workouts belonging to a user:
-router.get('/all/:id', async (req, res) => {
+router.get('/all/:id', authMiddleware, async (req, res) => {
     try {
         const userData = await Workout.findAll({
             where: {
@@ -24,7 +26,7 @@ router.get('/all/:id', async (req, res) => {
 });
 
 // GET a single workout
-router.get('/one/:id', async (req, res) => {
+router.get('/one/:id', authMiddleware, async (req, res) => {
     try {
         const workoutData = await Workout.findOne({
             where: {
@@ -47,7 +49,7 @@ router.get('/one/:id', async (req, res) => {
 });
 
 // CREATE A WORKOUT
-router.post('/create', async (req, res) => {
+router.post('/create', authMiddleware, async (req, res) => {
     try {
         const workoutData = await Workout.create({
             user_id: req.session.user_id,
@@ -68,7 +70,7 @@ router.post('/create', async (req, res) => {
 });
 
 // UPDATE WORKOUT
-router.put('/update', async (req, res) => {
+router.put('/update', authMiddleware, async (req, res) => {
     try {
         const workoutData = await Workout.update(req.body, {
             where: {
@@ -93,7 +95,7 @@ router.put('/update', async (req, res) => {
 });
 
 // DELETE WORKOUT
-router.delete('/delete', async (req, res) => {
+router.delete('/delete', authMiddleware, async (req, res) => {
     try {
         const workoutData = await Workout.destroy({
             where: {
