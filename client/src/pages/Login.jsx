@@ -59,8 +59,8 @@ const Login = () => {
         <video className="bg-video" src={whiteLight} autoPlay loop muted />
         <section className="login-card">
           <form className="login-form" onSubmit={handleFormSubmit}>
-            <input type="email" name="email" placeholder="email" value={loginForm.email} onChange={handleChange} />
-            <input type="password" name="password" placeholder="password" value={loginForm.password} onChange={handleChange} />
+            <input type="email" name="email" placeholder="Email" value={loginForm.email} onChange={handleChange} />
+            <input type="password" name="password" placeholder="Password" value={loginForm.password} onChange={handleChange} />
             <button type="submit">Log in</button>
           </form>
         </section>

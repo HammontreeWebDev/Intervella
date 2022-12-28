@@ -56,9 +56,9 @@ const Signup = () => {
             <main className="login-main">
                 <section className="login-card">
                     <form className="login-form" onSubmit={handleFormSubmit}>
-                        <input type="text" name="username" placeholder="username" value={signupForm.username} onChange={handleChange} />
-                        <input type="email" name="email" placeholder="email" value={signupForm.email} onChange={handleChange} />
-                        <input type="password" name="password" placeholder="password" value={signupForm.password} onChange={handleChange} />
+                        <input type="text" name="username" placeholder="Username" value={signupForm.username} onChange={handleChange} />
+                        <input type="email" name="email" placeholder="Email" value={signupForm.email} onChange={handleChange} />
+                        <input type="password" name="password" placeholder="Password" value={signupForm.password} onChange={handleChange} />
                         <button type="submit">Sign up</button>
                     </form>
                 </section>

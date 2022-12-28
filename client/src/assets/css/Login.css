@@ -42,13 +42,15 @@ input {
     text-align: center;
     border: 3px solid var(--pink);
     width: 85%;
+    padding: 2%;
 }
 
 button {
     border: transparent;
     background-color: transparent;
     color: var(--yellow);
-    font-size: 1.5rem;
     font-family: var(--archivo);
-
+    font-size: 1.2rem;
+    background-color: var(--pink);
+    padding: 2%;
 }

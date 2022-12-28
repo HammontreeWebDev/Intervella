@@ -27,8 +27,13 @@ class AuthService {
   }
 
   login(idToken) {
-    localStorage.setItem('id_token', idToken);
-    window.location.assign('/dashboard');
+
+    // prevents user from navigating to dashboard page with an invalid acct.
+    if (idToken !== undefined) {
+      localStorage.setItem('id_token', idToken);
+      window.location.assign('/dashboard');
+    }
+
   }
 
   logout() {
