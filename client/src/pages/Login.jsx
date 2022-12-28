@@ -1,3 +1,5 @@
+// TODO: Bug found, can login/ be redirected to dashboard without entering in correct credentials... need to only save a token if correct credentials were entered
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
@@ -8,6 +10,8 @@ import Auth from "../utils/auth";
 import { loginUser } from "../utils/API";
 
 import '../assets/css/Login.css';
+
+import whiteLight from '../assets/videos/white-light.mp4';
 
 const Login = () => {
 
@@ -52,6 +56,7 @@ const Login = () => {
         signup={<Link className='nav-link' to={'/signup'}>Sign Up</Link>}
       />
       <main className="login-main">
+        <video className="bg-video" src={whiteLight} autoPlay loop muted />
         <section className="login-card">
           <form className="login-form" onSubmit={handleFormSubmit}>
             <input type="email" name="email" placeholder="email" value={loginForm.email} onChange={handleChange} />
