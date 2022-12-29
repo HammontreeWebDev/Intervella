@@ -1,10 +1,14 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import Auth from "../utils/auth";
 
 import '../assets/css/Dashboard.css';
+
+// Components
+import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
+import CreateWorkout from "../components/CreateWorkout";
+import MyWorkouts from "../components/MyWorkouts";
 
 // ! any route that has authmiddleware you will need to getToken() to authenticate --> refer to googlebooks HW in api.js --> needs authorization header with bearer token
 
@@ -69,6 +73,8 @@ const Dashboard = () => {
                 <span></span>
                 <span></span>
             </div>
+            <CreateWorkout />
+            <MyWorkouts />
             </main>
             <Footer />
         </>
