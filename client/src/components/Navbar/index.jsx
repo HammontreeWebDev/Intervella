@@ -9,6 +9,8 @@ const Navbar = (props) => {
             {props.home}
             {props.login}
             {props.signup}
+            {props.createWorkout}
+            {props.myWorkouts}
             {props.logout}
         </nav>
         </header>
