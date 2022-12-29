@@ -1,7 +1,7 @@
 footer {
     margin: 0;
     padding: 5%;
-    background-color: black;
+    background-color: var(--pinkShade3);
     color: var(--yellow);
     display: flex;
     justify-content: center;

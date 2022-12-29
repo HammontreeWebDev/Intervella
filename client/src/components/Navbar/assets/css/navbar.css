@@ -4,7 +4,7 @@
     flex-direction: row;
     justify-content: space-around;
     padding: 4%;
-    background-color: rgba(0, 0, 0, 1);
+    background-color: var(--pinkShade3);
     color: white;
     margin: 0;
     font-family: var(--archivo);
