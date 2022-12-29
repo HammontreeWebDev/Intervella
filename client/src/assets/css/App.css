@@ -32,14 +32,26 @@ Login Page: Video by Nikita Ryumshin: https://www.pexels.com/video/glowing-cubes
   /* Shades */
 
   /* purple */
+  --purpShade1: #B926DE;
+  --purpShade2: #841B9E;
+  --purpShade3: #4F105E;
+  --purpShade4: #2F0A38;
 
   /* pink */
+  --pinkShade1: #BD1161;
+  --pinkShade2: #7D0B40;
+  --pinkShade3: #3D061F;
+  --pinkShade4: #E31475;
 
   /* yellow */
+  --yellowShade1: #BFAB5A;
+  --yellowShade2: #80723C;
+  --yellowShade3: #40391E;
+  --yellowShade4: #E6CD6C;
 
   /* Fonts: */
-
   --archivo: 'Archivo Black', sans-serif;
+
 }
 
 body {

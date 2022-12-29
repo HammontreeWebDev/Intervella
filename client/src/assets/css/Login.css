@@ -34,23 +34,24 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    background-color: var(--purple);
+    background-color: var(--purpShade4);
     padding: 3%;
 }
 
 input {
     text-align: center;
-    border: 3px solid var(--pink);
+    border: 3px solid var(--pinkShade2);
     width: 85%;
     padding: 2%;
 }
 
 button {
-    border: transparent;
+    border: 2px solid var(--yellowShade2);
     background-color: transparent;
     color: var(--yellow);
     font-family: var(--archivo);
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     background-color: var(--pink);
     padding: 2%;
+    border-radius: 1rem;
 }
