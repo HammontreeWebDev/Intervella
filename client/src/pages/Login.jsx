@@ -11,8 +11,6 @@ import { loginUser } from "../utils/API";
 
 import '../assets/css/Login.css';
 
-import whiteLight from '../assets/videos/white-light.mp4';
-
 const Login = () => {
 
   // use state to track login form's updated value
@@ -56,12 +54,63 @@ const Login = () => {
         signup={<Link className='nav-link' to={'/signup'}>Sign Up</Link>}
       />
       <main className="login-main">
-        <video className="bg-video" src={whiteLight} autoPlay loop muted />
+      <div class="background">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         <section className="login-card">
           <form className="login-form" onSubmit={handleFormSubmit}>
-            <input type="email" name="email" placeholder="Email" value={loginForm.email} onChange={handleChange} />
-            <input type="password" name="password" placeholder="Password" value={loginForm.password} onChange={handleChange} />
-            <button type="submit">Log in</button>
+            <input className="login-input" type="email" name="email" placeholder="Email" value={loginForm.email} onChange={handleChange} />
+            <input className="login-input" type="password" name="password" placeholder="Password" value={loginForm.password} onChange={handleChange} />
+            <button id="login-button" type="submit">Log in</button>
           </form>
         </section>
       </main>

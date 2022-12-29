@@ -62,7 +62,7 @@ body {
   padding: 0;
   -ms-overflow-style: none;  /* IE and Edge */
   scrollbar-width: none;  /* Firefox */
-  background-color: black;
+  background-color: var(--purple);
 }
 /* ! Everything in this react app is hooked to root, so setting flex to just body won't do anything... */
 #root {

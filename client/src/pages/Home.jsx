@@ -16,7 +16,7 @@ const Home = () => {
             signup={<Link className='nav-link' to={'/signup'}>Sign Up</Link>}
             />
             <main className="video-container">
-                <video src={promo} autoPlay loop muted />
+                <video className="home-video" src={promo} autoPlay loop muted />
             </main>
             {/* TODO: Create function to render a photo credit component (also create component) */}
             <Footer photoCredit={<button className="photo-credit" onClick={'Some function to show the photo credits'}>Photo Credits</button>} />

@@ -53,13 +53,65 @@ const Signup = () => {
             />
             
             {/* TODO: May want to consider changing class names just to avoid confusion - maybe make them more general or add same styling to signup.css for separation */}
-            <main className="login-main">
-                <section className="login-card">
-                    <form className="login-form" onSubmit={handleFormSubmit}>
-                        <input type="text" name="username" placeholder="Username" value={signupForm.username} onChange={handleChange} />
-                        <input type="email" name="email" placeholder="Email" value={signupForm.email} onChange={handleChange} />
-                        <input type="password" name="password" placeholder="Password" value={signupForm.password} onChange={handleChange} />
-                        <button type="submit">Sign up</button>
+            <main className="signup-main">
+            <div class="background">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+                <section className="signup-card">
+                    <form className="signup-form" onSubmit={handleFormSubmit}>
+                        <input className="signup-input" type="text" name="username" placeholder="Username" value={signupForm.username} onChange={handleChange} />
+                        <input className="signup-input" type="email" name="email" placeholder="Email" value={signupForm.email} onChange={handleChange} />
+                        <input className="signup-input" type="password" name="password" placeholder="Password" value={signupForm.password} onChange={handleChange} />
+                        <button id="signup-button" type="submit">Sign up</button>
                     </form>
                 </section>
             </main>
