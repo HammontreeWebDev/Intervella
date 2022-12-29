@@ -7,6 +7,7 @@ import '../assets/css/Dashboard.css';
 // Components
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import Timer from "../components/Timer";
 
 // ! any route that has authmiddleware you will need to getToken() to authenticate --> refer to googlebooks HW in api.js --> needs authorization header with bearer token
 
@@ -76,6 +77,9 @@ const Dashboard = () => {
                 <span></span>
                 <span></span>
             </div>
+            <section>
+                <Timer />
+            </section>
             </main>
             <Footer />
         </>
