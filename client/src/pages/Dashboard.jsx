@@ -51,7 +51,7 @@ const Dashboard = () => {
                 myWorkouts={<button className="nav-link" onClick={handleMyWorkoutsClick}>Workouts</button>}
             />
             <main className="dashboard-main">
-            <div class="background">
+            <div className="background">
                 <span></span>
                 <span></span>
                 <span></span>
